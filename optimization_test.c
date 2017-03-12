@@ -15,6 +15,13 @@
  *  Increase speed and size.
  * -Os param: enables most of -O2 optimization and
  *  perform further action to reduce code size
+ * 
+ * Further optimization can be achieved by compiling
+ * program for specific architecture or CPU family:
+ * -march=CPU param: CPU e.g. core2; code can be 
+ *  executed only on a specific CPU architecture
+ * -mcpu=CPU param: slower than march but can be run
+ *  on other CPUs in the family.
  * */
 #include <stdio.h>
 
@@ -35,7 +42,7 @@ int main(void)
 	double sum = 0.0;
 	unsigned i;
 
-	for (i = 1; i <= 600000000; i++)
+	for (i = 1; i <= 90000000; i++)
 	{
 		sum += powern(i, i % 5);
 	}
